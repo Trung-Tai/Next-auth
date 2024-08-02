@@ -1,0 +1,1 @@
+[![Run Python Script Daily](https://github.com/Trung-Tai/Next-auth/actions/workflows/python-package-conda.yml/badge.svg?branch=main)](https://github.com/Trung-Tai/Next-auth/actions/workflows/python-package-conda.yml)
