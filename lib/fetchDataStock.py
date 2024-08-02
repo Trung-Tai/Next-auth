@@ -6,7 +6,7 @@ stock = Vnstock().stock(symbol='VCB', source='VCI')
 
 try:
     connection = psycopg2.connect(
-    "postgresql://postgres.gvnhwrbpvhxdydpfqsry:6NmFJdS5xA.4bX%23@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres"  
+        "postgresql://postgres.cdjftiqzzhtpdolzkmmv:rBX.G5cByV5sn.z@aws-0-us-east-1.pooler.supabase.com:5432/postgres"  
         # user="postgres",
         # password="123456",
         # host="localhost",
