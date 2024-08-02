@@ -2,7 +2,8 @@ name: Run Python Script Daily
 
 on:
   schedule:
-    - cron: '35 23 * * *'  
+    - cron: '30 22 * * *'  # Thực hiện script hàng ngày lúc 22:30 UTC
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
@@ -14,7 +15,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.x'
+        python-version: '3.12'  # Đảm bảo rằng phiên bản Python đúng
 
     - name: Install dependencies
       run: |
@@ -22,4 +23,4 @@ jobs:
 
     - name: Run update script
       run: |
-        python lib/fetchDataQuote.py
+        python lib/fetchDataQuote.py  # Chạy script Python
