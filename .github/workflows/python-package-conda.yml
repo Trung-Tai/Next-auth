@@ -2,25 +2,25 @@ name: Update Data Daily
 
 on:
   schedule:
-    - cron: '15 23 * * *' 
+    - cron: "35 23 * * *"
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-    - name: Run update script
-      run: |
-        python lib/fetchDataQuote.py
+      - name: Run update script
+        run: |
+          python lib/fetchDataQuote.py

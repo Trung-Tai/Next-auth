@@ -1,24 +1,27 @@
-name: Update Data Daily
+name: Daily Update
 
 on:
   schedule:
-    - cron: "20 23 * * *"
+    - cron: "30 23 * * *"
+  workflow_dispatch:
 jobs:
-  update-data:
+  update_data:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v2
         with:
           python-version: "3.x"
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          pip install -U vnstock3
+          pip install psycopg2-binary pandas
 
       - name: Run update script
         run: |
