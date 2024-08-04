@@ -28,7 +28,7 @@ try:
                 formatted_tomorrow = tomorrow.strftime('%Y-%m-%d')
 
 
-                df = stock.quote.history(start="2024-07-01", end=formatted_tomorrow, interval='1H')
+                df = stock.quote.history(start=formatted_today, end=formatted_tomorrow, interval='1H')
                 if not df.empty:
                     for index, row in df.iterrows():
                         date_value = row['time']
